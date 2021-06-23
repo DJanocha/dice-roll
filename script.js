@@ -2,7 +2,7 @@
 
 //get elements from DOM
 let gameActive = true;
-let currentPlayer = 1;
+let currentPlayer = 0;
 const pointsToWin = 100;
 const numberOfPlayers = 2;
 let holdButton = document.querySelector('.btn--hold');
@@ -41,11 +41,12 @@ function rollDice() {
     diceElement.classList.remove('hidden'); // show the dice
     diceElement.src = `img/dice-${randomNumber}.png`; // change the image corresponding to the number randomly generated
 
-    if (randomNumber < 2) {
+    if (randomNumber < 2) { // if u get 1
         currentScore = 0
+        currents[currentPlayer].innerText=0;
         togglePlayers();
     }
-    else
+    else // if u get  higher than 1
         currentScore += randomNumber;
     currents[currentPlayer].innerText = currentScore;
 }
@@ -55,7 +56,7 @@ function togglePlayers() {
     currentPlayer = 1 - currentPlayer; // switch the current player from 0 to 1 and the other way around
 }
 function reset() {
-    currentPlayer = 1;
+    currentPlayer = 0;
     diceElement.classList.add('hidden'); //hide the dice
     for (let a = 0; a < players.length; ++a) {
         players[a].classList.remove('player--winner') // after resetting make both players not winners (set to init state)
