@@ -9,7 +9,7 @@
 
 4. get 100 points to BEAT the other player
 
-Check it out using live-server!
+ Play with it using live-server or just CHECK IT OUT!
 
 <div align="center" color="orangered"><h3>DEMO BELOW</h3></div>
 
